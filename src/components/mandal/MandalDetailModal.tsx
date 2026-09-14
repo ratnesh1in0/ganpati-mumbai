@@ -348,18 +348,28 @@ export const MandalDetailModal: React.FC<MandalDetailModalProps> = ({
                 <div>
                   <div className="relative aspect-video rounded-xl overflow-hidden bg-black border border-white/10 shadow-lg">
                     <iframe
-                      src={mandal.streamEmbedUrl || "https://www.youtube-nocookie.com/embed/live_stream?channel=UCkQZz0Y8P6vE"}
+                      src={mandal.streamEmbedUrl || "https://www.youtube.com/embed/kxUBFVdtYh4?autoplay=1&rel=0"}
                       title={mandal.name}
                       className="w-full h-full border-0"
-                      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
                       allowFullScreen
                     />
                   </div>
-                  <p className="text-[11px] text-[#827367] text-center mt-2">
-                    {language === 'mr'
-                      ? '२४ तास अधिकृत थेट प्रक्षेपण (लाईव्ह दर्शन)'
-                      : '24x7 Official Live Stream directly from the pandal'}
-                  </p>
+                  <div className="flex items-center justify-between gap-2 mt-2 text-[11px] text-[#827367]">
+                    <span>
+                      {language === 'mr'
+                        ? '२४ तास अधिकृत थेट प्रक्षेपण (लाईव्ह दर्शन)'
+                        : '24x7 Official Live Stream'}
+                    </span>
+                    <a
+                      href="https://www.youtube.com/@LalbaugRaja/live"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="text-[#E2621B] hover:text-[#F59E0B] font-bold"
+                    >
+                      {language === 'mr' ? 'YouTube वर पहा ↗' : 'Watch on YouTube ↗'}
+                    </a>
+                  </div>
                 </div>
               ) : (
                 <div className="p-8 text-center surface rounded-xl border border-white/10">
