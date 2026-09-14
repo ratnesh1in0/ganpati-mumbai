@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" fill="none">
+  <rect width="100" height="100" rx="24" fill="#14100C"/>
+  <circle cx="50" cy="50" r="42" stroke="#E5A93C" stroke-width="1.5" stroke-dasharray="4 3" opacity="0.4"/>
+  <!-- Glowing halo -->
+  <circle cx="50" cy="45" r="28" fill="#E2621B" fill-opacity="0.2" filter="blur(8px)"/>
+  <!-- Ganpati symbol -->
+  <path d="M34 32C24 26 12 28 7 37c-5 9-2 22 6 28 6 5 14 5 21 1Z" fill="#F59E0B" opacity="0.8"/>
+  <path d="M66 32c10-6 22-4 27 5 5 9 2 22-6 28-6 5-14 5-21 1Z" fill="#F59E0B" opacity="0.8"/>
+  <circle cx="50" cy="12" r="4" fill="#E5A93C"/>
+  <path d="M50 18c7 0 13 4 15 12H35c2-8 8-12 15-12Z" fill="#E2621B"/>
+  <rect x="33" y="30" width="34" height="5" rx="2.5" fill="#E5A93C"/>
+  <path d="M50 35c12 0 20 9 20 20v9c0 11-9 20-20 20s-20-9-20-20v-9c0-11 8-20 20-20Z" fill="#E2621B"/>
+  <ellipse cx="41" cy="48" rx="3" ry="4" fill="#14100C"/>
+  <ellipse cx="59" cy="48" rx="3" ry="4" fill="#14100C"/>
+  <!-- Tilak -->
+  <path d="M50 38v10" stroke="#F59E0B" stroke-width="3" stroke-linecap="round"/>
+  <circle cx="50" cy="52" r="2" fill="#F59E0B"/>
+  <!-- Trunk -->
+  <path d="M50 63c0 9-1 16-5 21-3 4-2 8.5 2 9.5 3.5 1 6.5-1 7-4" stroke="#F59E0B" stroke-width="7" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>

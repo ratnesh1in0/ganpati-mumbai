@@ -1,0 +1,151 @@
+@import "tailwindcss";
+
+@layer base {
+  :root {
+    --raat: #14100C;
+    --dhoop: #1D1712;
+    --dhoop-2: #28201A;
+    --dhoop-3: #382C24;
+    --line: rgba(255, 255, 255, 0.09);
+    --line-strong: rgba(255, 255, 255, 0.18);
+    --chandan: #F5EBE1;
+    --muted: #BDB0A4;
+    --faint: #827367;
+    --shendur: #E2621B;
+    --shendur-hover: #F07024;
+    --zendu: #F59E0B;
+    --pital: #E5A93C;
+    --radius-card: 18px;
+    --radius-field: 12px;
+    --glow-shendur: 0 0 28px rgba(226, 98, 27, 0.45);
+    --glow-zendu: 0 0 20px rgba(245, 158, 11, 0.5);
+    --lift-card: 0 12px 32px -8px rgba(0, 0, 0, 0.6);
+  }
+
+  body {
+    margin: 0;
+    background-color: var(--raat);
+    color: var(--chandan);
+    font-family: 'Mukta', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    min-height: 100vh;
+    overflow-x: hidden;
+  }
+}
+
+/* Typography classes */
+.font-display {
+  font-family: 'Outfit', 'Cinzel', -apple-system, sans-serif;
+}
+
+.font-marathi {
+  font-family: 'Mukta', sans-serif;
+}
+
+/* Surface utilities */
+.surface {
+  background-color: var(--dhoop);
+  border: 1px solid var(--line);
+  border-radius: var(--radius-card);
+}
+
+.surface-raised {
+  background-color: var(--dhoop-2);
+  border: 1px solid var(--line-strong);
+  border-radius: var(--radius-card);
+}
+
+.surface-interactive {
+  background-color: var(--dhoop);
+  border: 1px solid var(--line);
+  border-radius: var(--radius-card);
+  transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.surface-interactive:hover {
+  background-color: var(--dhoop-2);
+  border-color: rgba(226, 98, 27, 0.4);
+  transform: translateY(-2px);
+  box-shadow: var(--lift-card);
+}
+
+/* Glowing effects */
+.glow-shendur {
+  box-shadow: var(--glow-shendur);
+}
+
+.glow-zendu {
+  box-shadow: var(--glow-zendu);
+}
+
+/* Background Rangoli / Mandala Overlay */
+.rangoli-overlay {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background-image: 
+    radial-gradient(circle at 50% 0%, rgba(226, 98, 27, 0.15) 0%, transparent 65%),
+    radial-gradient(circle at 10% 20%, rgba(245, 158, 11, 0.08) 0%, transparent 40%),
+    radial-gradient(circle at 90% 20%, rgba(229, 169, 60, 0.08) 0%, transparent 40%);
+  mask-image: radial-gradient(80% 60% at 50% 0%, #000 0%, transparent 85%);
+  -webkit-mask-image: radial-gradient(80% 60% at 50% 0%, #000 0%, transparent 85%);
+}
+
+.rangoli-pattern {
+  background-image: radial-gradient(rgba(229, 169, 60, 0.12) 1px, transparent 0);
+  background-size: 24px 24px;
+}
+
+/* Custom scrollbars */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  background: var(--raat);
+}
+::-webkit-scrollbar-thumb {
+  background: var(--dhoop-3);
+  border-radius: 9999px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--shendur);
+}
+
+/* Mobile bottom nav safe padding */
+.pb-nav {
+  padding-bottom: calc(4.75rem + env(safe-area-inset-bottom, 16px));
+}
+
+/* Hide scrollbar for clean carousels */
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+/* Leaflet dark theme customizations */
+.leaflet-container {
+  background-color: #120e0a !important;
+  font-family: 'Mukta', sans-serif !important;
+}
+
+.leaflet-popup-content-wrapper {
+  background: #1D1712 !important;
+  color: #F5EBE1 !important;
+  border: 1px solid rgba(226, 98, 27, 0.4) !important;
+  border-radius: 16px !important;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.7) !important;
+  padding: 4px !important;
+}
+
+.leaflet-popup-tip {
+  background: #1D1712 !important;
+  border: 1px solid rgba(226, 98, 27, 0.4) !important;
+}
+
+.leaflet-popup-content {
+  margin: 10px !important;
+  line-height: 1.4 !important;
+}

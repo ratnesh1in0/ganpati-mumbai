@@ -1,0 +1,18 @@
+{
+  "name": "Mumbai Ganpati Darshan — Live Status & Routes",
+  "short_name": "Ganpati Mumbai",
+  "description": "Live queue reports from devotees, real-time crowd status, local train transit guides, and walkable darshan routes through Mumbai.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#14100C",
+  "theme_color": "#14100C",
+  "orientation": "portrait",
+  "icons": [
+    {
+      "src": "/favicon.svg",
+      "sizes": "192x192 512x512",
+      "type": "image/svg+xml",
+      "purpose": "any maskable"
+    }
+  ]
+}
