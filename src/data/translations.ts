@@ -51,6 +51,9 @@ export const TRANSLATIONS = {
     navLiveStreams: "Live Streams",
     navVisarjan: "Visarjan Guide",
     navAartis: "Aarti Sangrah",
+    navMore: "More",
+    navAbout: "About",
+    navHowToUse: "How to Use",
     
     // Common
     minutes: "min",
@@ -147,6 +150,9 @@ export const TRANSLATIONS = {
     navLiveStreams: "थेट प्रक्षेपण",
     navVisarjan: "विसर्जन माहिती",
     navAartis: "आरती संग्रह",
+    navMore: "अधिक",
+    navAbout: "या उपक्रमाविषयी",
+    navHowToUse: "कसे वापरावे",
     
     // Common
     minutes: "मि.",

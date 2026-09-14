@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link, useLocation } from 'react-router-dom';
-import { Search, Map, Route, Compass, Bookmark, Car, Radio, Music } from 'lucide-react';
+import { Search, Menu, X } from 'lucide-react';
 import { useLanguage } from '../../hooks/useLanguage';
 import { LanguageToggle } from '../common/LanguageToggle';
 import { GanpatiGlyph } from '../../assets/DevotionalIcons';
@@ -8,9 +8,16 @@ import { GanpatiGlyph } from '../../assets/DevotionalIcons';
 interface NavbarProps {
   onOpenSearch: () => void;
   savedCount: number;
+  onOpenMobileMenu?: () => void;
+  isMobileMenuOpen?: boolean;
 }
 
-export const Navbar: React.FC<NavbarProps> = ({ onOpenSearch, savedCount }) => {
+export const Navbar: React.FC<NavbarProps> = ({
+  onOpenSearch,
+  savedCount,
+  onOpenMobileMenu,
+  isMobileMenuOpen
+}) => {
   const { language, t } = useLanguage();
   const location = useLocation();
 
@@ -21,6 +28,7 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenSearch, savedCount }) => {
     { path: '/routes', label: t.navRoutes },
     { path: '/transit', label: t.navTransit },
     { path: '/streams', label: t.navLiveStreams },
+    { path: '/visarjan', label: t.navVisarjan },
     { path: '/aartis', label: t.navAartis },
     { path: '/saved', label: t.navSaved, count: savedCount }
   ];
@@ -49,14 +57,14 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenSearch, savedCount }) => {
         </Link>
 
         {/* Desktop Navigation */}
-        <nav className="hidden md:flex items-center gap-1 lg:gap-2">
+        <nav className="hidden md:flex items-center gap-1 lg:gap-1.5">
           {navLinks.map((link) => {
             const isActive = location.pathname === link.path;
             return (
               <Link
                 key={link.path}
                 to={link.path}
-                className={`px-3 py-1.5 rounded-full text-xs font-semibold transition-colors flex items-center gap-1.5 ${
+                className={`px-2.5 py-1.5 rounded-full text-xs font-semibold transition-colors flex items-center gap-1.5 ${
                   isActive
                     ? 'bg-[#E2621B]/15 text-[#F59E0B] border border-[#E2621B]/40'
                     : 'text-[#BDB0A4] hover:text-[#F5EBE1] hover:bg-white/5'
@@ -89,8 +97,25 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenSearch, savedCount }) => {
           </button>
 
           <LanguageToggle />
+
+          {/* Mobile Menu Hamburger Button */}
+          {onOpenMobileMenu && (
+            <button
+              onClick={onOpenMobileMenu}
+              type="button"
+              className="md:hidden p-2 rounded-xl bg-[#1D1712] border border-white/10 text-[#827367] hover:text-[#F5EBE1] transition-colors cursor-pointer"
+              aria-label={isMobileMenuOpen ? 'Close navigation menu' : 'Open navigation menu'}
+            >
+              {isMobileMenuOpen ? (
+                <X className="w-5 h-5 text-[#E2621B]" />
+              ) : (
+                <Menu className="w-5 h-5" />
+              )}
+            </button>
+          )}
         </div>
       </div>
     </header>
   );
 };
+

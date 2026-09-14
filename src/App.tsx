@@ -10,6 +10,7 @@ import { Mandal } from './data/mandalsData';
 // Layout
 import { Navbar } from './components/layout/Navbar';
 import { BottomNav } from './components/layout/BottomNav';
+import { MobileMenuDrawer } from './components/layout/MobileMenuDrawer';
 import { Footer } from './components/layout/Footer';
 
 // Modals
@@ -56,6 +57,7 @@ function AppContent() {
   const [isReportModalOpen, setIsReportModalOpen] = useState<boolean>(false);
   const [reportInitialMandalId, setReportInitialMandalId] = useState<string | undefined>(undefined);
   const [isSearchOpen, setIsSearchOpen] = useState<boolean>(false);
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState<boolean>(false);
 
   // Keyboard shortcut ⌘K or Ctrl+K for search
   useEffect(() => {
@@ -85,6 +87,8 @@ function AppContent() {
       <Navbar
         onOpenSearch={() => setIsSearchOpen(true)}
         savedCount={savedIds.length}
+        onOpenMobileMenu={() => setIsMobileMenuOpen(prev => !prev)}
+        isMobileMenuOpen={isMobileMenuOpen}
       />
 
       {/* Main Routed Content */}
@@ -218,7 +222,19 @@ function AppContent() {
       <Footer />
 
       {/* Mobile Bottom Navigation */}
-      <BottomNav savedCount={savedIds.length} />
+      <BottomNav
+        savedCount={savedIds.length}
+        onOpenMore={() => setIsMobileMenuOpen(true)}
+        isMoreOpen={isMobileMenuOpen}
+      />
+
+      {/* Mobile Full Navigation Drawer */}
+      <MobileMenuDrawer
+        isOpen={isMobileMenuOpen}
+        onClose={() => setIsMobileMenuOpen(false)}
+        savedCount={savedIds.length}
+        onOpenSearch={() => setIsSearchOpen(true)}
+      />
 
       {/* Global Modals */}
       <MandalDetailModal
